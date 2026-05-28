@@ -1,7 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+(function () {
 
-  const repo =
-    "https://cdn.jsdelivr.net/gh/blackxs0001s/iconx@main/";
+  const repo = "https://cdn.jsdelivr.net/gh/blackxs0001s/iconx@main/";
 
   const styles = {
     "ji-regular": "svg_r/",
@@ -19,40 +18,34 @@ document.addEventListener("DOMContentLoaded", () => {
     "ji-5xl": "5em"
   };
 
-  document.querySelectorAll("[class*='ji-']").forEach(el => {
+  function render(el) {
+    if (el.dataset.jiRendered === "1") return;
 
-    let styleClass = null;
-
-    Object.keys(styles).forEach(c => {
-      if (el.classList.contains(c)) {
-        styleClass = c;
-      }
-    });
+    const styleClass = Object.keys(styles)
+      .find(c => el.classList.contains(c));
 
     if (!styleClass) return;
 
-    const cls = [...el.classList]
-      .find(c =>
-        c.startsWith("ji-") &&
-        !styles[c] &&
-        !sizes[c]
-      );
+    const iconClass = [...el.classList].find(c =>
+      c.startsWith("ji-") &&
+      !styles[c] &&
+      !sizes[c]
+    );
 
-    if (!cls) return;
+    if (!iconClass) return;
 
-    const icon = cls.replace("ji-", "");
-
-    const base =
-      repo + styles[styleClass];
+    const icon = iconClass.replace("ji-", "");
+    const url = repo + styles[styleClass] + icon + ".svg";
 
     el.style.display = "inline-block";
     el.style.width = "1em";
     el.style.height = "1em";
     el.style.minWidth = "1em";
     el.style.minHeight = "1em";
-
     el.style.backgroundColor = "currentColor";
     el.style.verticalAlign = "-0.125em";
+    el.style.mask = `url("${url}") center / contain no-repeat`;
+    el.style.webkitMask = `url("${url}") center / contain no-repeat`;
 
     Object.keys(sizes).forEach(size => {
       if (el.classList.contains(size)) {
@@ -60,12 +53,34 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    el.style.mask =
-      `url("${base}${icon}.svg") center / contain no-repeat`;
+    el.dataset.jiRendered = "1";
+  }
 
-    el.style.webkitMask =
-      `url("${base}${icon}.svg") center / contain no-repeat`;
+  function scan(root = document) {
+    root.querySelectorAll("[class*='ji-']").forEach(render);
+  }
 
+  document.addEventListener("DOMContentLoaded", () => scan());
+
+  const observer = new MutationObserver(mutations => {
+    mutations.forEach(m => {
+      m.addedNodes.forEach(node => {
+        if (node.nodeType !== 1) return;
+
+        if (node.matches && node.matches("[class*='ji-']")) {
+          render(node);
+        }
+
+        if (node.querySelectorAll) {
+          scan(node);
+        }
+      });
+    });
   });
 
-});
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true
+  });
+
+})();
