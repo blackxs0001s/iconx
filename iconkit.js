@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://cdn.jsdelivr.net/gh/blackxs0001s/iconx@main/";
 
   const styles = {
-    "ji-regular": "svg_r/",
+    "ji-regular": "svg/",
     "ji-bold": "svg_b/"
   };
 
