@@ -4,8 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://cdn.jsdelivr.net/gh/blackxs0001s/iconx@main/";
 
   const styles = {
-    "ji-regular": "svg/",
-    "ji-bold": "svg_b/"
+    "ji-regular": "svg_r/svg/",
+    "ji-bold": "svg_b/svg/"
+  };
+
+  const sizes = {
+    "ji-xs": "0.75em",
+    "ji-sm": "0.875em",
+    "ji-lg": "1.25em",
+    "ji-xl": "1.5em",
+    "ji-2xl": "2em",
+    "ji-3xl": "3em",
+    "ji-4xl": "4em",
+    "ji-5xl": "5em"
   };
 
   document.querySelectorAll("[class*='ji-']").forEach(el => {
@@ -23,8 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const cls = [...el.classList]
       .find(c =>
         c.startsWith("ji-") &&
-        c !== "ji-regular" &&
-        c !== "ji-bold"
+        !styles[c] &&
+        !sizes[c]
       );
 
     if (!cls) return;
@@ -42,6 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     el.style.backgroundColor = "currentColor";
     el.style.verticalAlign = "-0.125em";
+
+    Object.keys(sizes).forEach(size => {
+      if (el.classList.contains(size)) {
+        el.style.fontSize = sizes[size];
+      }
+    });
 
     el.style.mask =
       `url("${base}${icon}.svg") center / contain no-repeat`;
