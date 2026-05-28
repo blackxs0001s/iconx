@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="48.000000pt" height="48.000000pt" viewBox="0 0 48.000000 48.000000"
+ preserveAspectRatio="xMidYMid meet">
+<metadata>
+Created by potrace 1.16, written by Peter Selinger 2001-2019
+</metadata>
+<g transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)"
+fill="currentColor" stroke="currentColor" stroke-width="6" stroke-linejoin="round">
+<path d="M16 464 c-24 -23 -24 -425 0 -448 23 -24 425 -24 448 0 24 23 24 425
+0 448 -23 24 -425 24 -448 0z m434 -224 l0 -210 -210 0 -210 0 0 210 0 210
+210 0 210 0 0 -210z M70 365 c0 -14 5 -25 10 -25 6 0 10 7 10 15 0 8 9 15 20
+15 18 0 20 -7 20 -55 0 -30 5 -55 10 -55 6 0 10 25 10 55 0 48 2 55 20 55 11
+0 20 -7 20 -15 0 -8 5 -15 10 -15 6 0 10 11 10 25 0 24 -2 25 -70 25 -68 0
+-70 -1 -70 -25z M260 380 c0 -6 30 -10 70 -10 40 0 70 4 70 10 0 6 -30 10 -70
+10 -40 0 -70 -4 -70 -10z M260 290 c0 -6 30 -10 70 -10 40 0 70 4 70 10 0 6
+-30 10 -70 10 -40 0 -70 -4 -70 -10z M70 200 c0 -6 62 -10 165 -10 103 0 165
+4 165 10 0 6 -62 10 -165 10 -103 0 -165 -4 -165 -10z M70 110 c0 -6 62 -10
+165 -10 103 0 165 4 165 10 0 6 -62 10 -165 10 -103 0 -165 -4 -165 -10z"/>
+</g>
+</svg>
+

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" standalone="no"?>
+<?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +8,7 @@
 Created by potrace 1.16, written by Peter Selinger 2001-2019
 </metadata>
 <g transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)"
-fill="currentColor" stroke="none">
+fill="currentColor" stroke="currentColor" stroke-width="6" stroke-linejoin="round">
 <path d="M110 460 c-17 -17 -20 -33 -20 -110 0 -131 -1 -130 195 -130 196 0
 195 -1 195 130 0 131 1 130 -195 130 -142 0 -157 -2 -175 -20z m340 -110 l0
 -100 -165 0 -165 0 0 100 0 100 165 0 165 0 0 -100z M150 400 c0 -5 11 -10 25
