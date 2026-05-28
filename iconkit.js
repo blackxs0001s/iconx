@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://cdn.jsdelivr.net/gh/blackxs0001s/iconx@main/";
 
   const styles = {
-    "ji-regular": "svg_r/svg/",
-    "ji-bold": "svg_b/svg/"
+    "ji-regular": "svg_r/",
+    "ji-bold": "svg_b/"
   };
 
   document.querySelectorAll("[class*='ji-']").forEach(el => {
